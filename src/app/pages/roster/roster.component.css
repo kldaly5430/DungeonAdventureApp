@@ -1,0 +1,33 @@
+.health-bar-container {
+    width: 80%;  /* Adjust based on your design */
+    height: 15px;
+    background-color: #555; /* Dark background */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures the bar stays inside */
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+  
+.health-bar {
+    height: 100%;
+    background-color: #4caf50; /* Green for health */
+    transition: width 0.3s ease-in-out;
+    width: 100%;
+}
+
+.stamina-bar-container {
+    width: 80%;  /* Adjust based on your design */
+    height: 15px;
+    background-color: #555; /* Dark background */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures the bar stays inside */
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.stamina-bar {
+    height: 100%;
+    background-color: #b7e903; /* Yellow for Stamina */
+    transition: width 0.3s ease-in-out;
+    width: 100%;
+}

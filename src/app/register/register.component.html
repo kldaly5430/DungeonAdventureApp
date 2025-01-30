@@ -1,1 +1,40 @@
-<p>register works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-register my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Register</h5>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" formControlName="email" class="form-control">
+                    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                        <small *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</small>
+                        <small *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</small>
+                    </div>
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" formControlName="password" class="form-control">
+                    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                        <small *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</small>
+                        <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+                    </div>
+                    <br>
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" formControlName="confirmPassword" class="form-control">
+                    <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+                        <small *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required.</small>
+                        <small *ngIf="registerForm.errors?.['mismatch']">Passwords do not match.</small>
+                    </div>
+                    <br>
+                    <div class="row pt-3 justify-content-center">
+                        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+                    </div>
+                    </form>
+                    <div class="row pt-3">
+                        <a class="mx-auto" routerLink="/login">Already have an account? Click here to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

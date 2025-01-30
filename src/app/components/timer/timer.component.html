@@ -1,0 +1,9 @@
+<div class="timer-container">
+    <h2>Countdown Timer</h2>
+    <h1>{{ remainingTime }}s</h1>
+  
+    <button *ngIf="!timerRunning" (click)="startTimer()">Start Timer</button>
+    <button *ngIf="timerRunning" (click)="stopTimer()">Stop Timer</button>
+  
+    <button (click)="setTimer()">Set Timer</button>
+  </div>

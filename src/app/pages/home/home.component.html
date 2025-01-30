@@ -1,0 +1,28 @@
+<body>
+    <div class="container">
+        <div class="container col-lg-12" id="recap">
+            <div class="row">
+    
+              <div class="col-md-8 border">
+                <h2>Recaps</h2>
+                <div class="row mb-0">
+                  <div class="col-md-10">
+                    <app-timer (timerEnded)="onTimerEnd()"></app-timer>
+                  </div>
+                  <div class="col-md-2">
+                    
+                  </div>
+                </div>
+                <hr>
+              </div>
+              <div class="col-md-4 border">
+                <h2>Roster</h2>
+                <hr>
+                <div class="row mb-0">
+                    <app-roster [adventurers]="adventurers"></app-roster>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
