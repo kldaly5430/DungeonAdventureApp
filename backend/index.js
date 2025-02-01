@@ -18,10 +18,12 @@ app.use(cors({
 const authRoutes = require('./routes/authRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const timerRoutes = require('./routes/timerRoutes');
+const adventurerRoutes = require('./routes/adventurerRoutes');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/home', homeRoutes);
 app.use('/api/timer', timerRoutes);
+app.use('/api/adventurers', adventurerRoutes);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

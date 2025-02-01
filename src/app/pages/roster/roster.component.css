@@ -31,3 +31,9 @@
     transition: width 0.3s ease-in-out;
     width: 100%;
 }
+
+li {
+    list-style: none;
+    margin: none;
+    padding: none;
+}

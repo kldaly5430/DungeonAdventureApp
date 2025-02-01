@@ -1,31 +1,35 @@
-<div class="card">
-    <div class="card-body">
-        <div class="row" *ngFor="let adventurer of adventurers">
-            <div class="col-4">
-                <img [src]="adventurer.image" class="card-img-top">
-            </div>
-            <div class="col-8">
+<ul>
+    <li *ngFor="let adventurer of adventurers">
+        <div class="card">
+            <div class="card-body">
                 <div class="row">
-                    <div class="col-8">
-                        <p>Name: {{ adventurer.name }}</p>
-                    </div>
                     <div class="col-4">
-                        <p>Role: {{ adventurer.role }}</p>
+                        <img [src]="adventurer.image" alt="{{ adventurer.name }}" class="card-img-top">
                     </div>
-                </div>
-                <div class="row">
-                    <label>HP: </label>
-                    <div class="health-bar-container">
-                        <div class="health-bar" [ngStyle]="{ 'width': adventurer.hp + '%' }"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <label>Stamina: </label>
-                    <div class="stamina-bar-container">
-                        <div class="stamina-bar" [ngStyle]="{ 'width': adventurer.stamina + '%' }"></div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-8">
+                                <p>Name:</p><strong>{{ adventurer.name }}</strong>
+                            </div>
+                            <div class="col-4">
+                                <p>Role:</p><strong>{{ adventurer.role }}</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>HP: </label>
+                            <div class="health-bar-container">
+                                <div class="health-bar" [ngStyle]="{ 'width': adventurer.hp + '%' }"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>Stamina: </label>
+                            <div class="stamina-bar-container">
+                                <div class="stamina-bar" [ngStyle]="{ 'width': adventurer.stamina + '%' }"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </li>
+</ul>

@@ -1,13 +1,16 @@
+<header>
+  <app-header></app-header>
+</header>
 <body>
     <div class="container">
         <div class="container col-lg-12" id="recap">
             <div class="row">
     
-              <div class="col-md-8 border">
+              <div class="col-md-6 border">
                 <h2>Recaps</h2>
                 <div class="row mb-0">
                   <div class="col-md-10">
-                    <app-timer (timerEnded)="onTimerEnd()"></app-timer>
+                    <app-timer (timerEnded)="generateAdventurers()"></app-timer>
                   </div>
                   <div class="col-md-2">
                     
@@ -15,11 +18,16 @@
                 </div>
                 <hr>
               </div>
-              <div class="col-md-4 border">
-                <h2>Roster</h2>
-                <hr>
+              <div class="col-md-6 border" id="rosterBox">
+                <h2 id="rosterHead">Roster</h2>
+                <hr id="rosterDivide">
                 <div class="row mb-0">
+                  <div *ngIf="noAdventurers" class="no-adventurers">
+                    <p>No adventurers found. Please generate some adventurers.</p>
+                  </div>
+                  <div *ngIf="!noAdventurers" class="no-adventurers">
                     <app-roster [adventurers]="adventurers"></app-roster>
+                  </div>
               </div>
             </div>
           </div>
